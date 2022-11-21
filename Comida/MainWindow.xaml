@@ -113,6 +113,7 @@
             <Setter Property="Margin" Value="0,0,0,10"></Setter>
         </Style>
         <Style TargetType="TextBox">
+            <Setter Property="Template" Value="{DynamicResource TextBoxControlTemplate1}"></Setter>
             <Setter Property="Margin" Value="5,0,5,5"></Setter>
         </Style>
         <Style TargetType="TextBlock">
@@ -290,7 +291,7 @@
                     <Setter Property="BorderBrush" TargetName="border" Value="#FF569DE5"/>
                     <Setter Property="Effect" TargetName="border">
                         <Setter.Value>
-                            <DropShadowEffect></DropShadowEffect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="20" Color="AliceBlue"></DropShadowEffect>
                         </Setter.Value>
                     </Setter>
                 </Trigger>
@@ -312,9 +313,9 @@
         </ListBox>
         <StackPanel Style="{StaticResource Panel}" Grid.Column="1" Background="LightGray">
             <TextBlock  Text="Nombre del plato"></TextBlock>
-            <TextBox Text="{Binding Path=PlatoSeleccionado.Nombre, UpdateSourceTrigger=PropertyChanged}" Template="{DynamicResource TextBoxControlTemplate1}"></TextBox>
+            <TextBox Text="{Binding Path=PlatoSeleccionado.Nombre, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBlock Text="Foto del plato"></TextBlock>
-            <TextBox Text="{Binding Path=PlatoSeleccionado.Imagen, UpdateSourceTrigger=PropertyChanged}" Template="{DynamicResource TextBoxControlTemplate1}"></TextBox>
+            <TextBox Text="{Binding Path=PlatoSeleccionado.Imagen, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBlock Text="Tipo de comida"></TextBlock>
             <ComboBox ItemsSource="{Binding Path=Tipos}" SelectedItem="{Binding Path=PlatoSeleccionado.Tipo}">
             </ComboBox>
